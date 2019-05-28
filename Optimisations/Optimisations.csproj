@@ -53,6 +53,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualTask.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ActualTask.Designer.cs">
+      <DependentUpon>ActualTask.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddingPoint.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +79,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ActualTask.resx">
+      <DependentUpon>ActualTask.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddingPoint.resx">
       <DependentUpon>AddingPoint.cs</DependentUpon>
     </EmbeddedResource>

@@ -99,13 +99,13 @@ namespace Optimisations
             double a = (pointPairs2.Count * xySum - xSum * ySum) / (pointPairs2.Count * xSqSum - xSum * xSum);
             double b = (ySum - a * xSum) / pointPairs2.Count;
 
-            koefaTB.Text = a.ToString("0.000000");
+            koefaTB.Text = a.ToString("0.0######");
             koefbTB.Text = b.ToString("0.00");
 
             ZedGraph.GraphPane graphPane3 = zedGraphControl1.GraphPane;
             ZedGraph.PointPairList pointPairs3 = new ZedGraph.PointPairList();
 
-            for(double x = xmin; x <= xmax; x++)
+            for (double x = xmin; x <= xmax; x++)
             {
                 pointPairs3.Add(x, a * x + b);
             }
@@ -138,7 +138,7 @@ namespace Optimisations
                 double xySum = 0d;
                 double xSqSum = 0d;
 
-                
+
 
 
                 for (int i = 0; i < countPoints.Count; i++)
@@ -238,5 +238,112 @@ namespace Optimisations
             }
         }
 
+
+        private void график1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ZedGraph.GraphPane graphPane = zedGraphControl1.GraphPane;
+            ZedGraph.PointPairList pointPairs = new ZedGraph.PointPairList();
+
+            graphPane.CurveList.Clear();
+            graphPane.Title.Text = "График 1";
+
+            for (double x = 0; x <= 1; x += 0.01)
+            {
+                if (x >= 0 && x < 0.32)
+                {
+                    pointPairs.Add(x, 0.9);
+                }
+                else if (x >= 0.32 && x < 0.5)
+                {
+                    pointPairs.Add(x, -10 * Math.Pow(x - 0.327, 2) + 0.9);
+                }
+                else if (x >= 0.5 && x <= 1)
+                {
+                    pointPairs.Add(x, 2 * Math.Pow(x - 1, 2) + 0.1);
+                }
+                else MessageBox.Show($"Missing {x}");
+            }
+
+            ZedGraph.LineItem lineItemResult = graphPane.AddCurve("График 1", pointPairs, Color.Red, ZedGraph.SymbolType.None);
+
+
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+        }
+
+        private void график2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ZedGraph.GraphPane graphPane = zedGraphControl1.GraphPane;
+            ZedGraph.PointPairList pointPairs = new ZedGraph.PointPairList();
+
+            graphPane.CurveList.Clear();
+            graphPane.Title.Text = "График 2";
+
+            for (double x = 0; x <= 1; x += 0.01)
+            {
+                if (x >= 0 && x < 0.08)
+                {
+                    pointPairs.Add(x, 0.95);
+                }
+                else if (x >= 0.08 && x < 0.1)
+                {
+                    pointPairs.Add(x, -30 * Math.Pow(x - 0.08, 2) + 0.95);
+                }
+                else if (x >= 0.1 && x <= 1)
+                {
+                    pointPairs.Add(x, 1 / (x + 0.55) - 0.6);
+                }
+                else MessageBox.Show($"Missing {x}");
+            }
+
+            ZedGraph.LineItem lineItemResult = graphPane.AddCurve("График 2", pointPairs, Color.Red, ZedGraph.SymbolType.None);
+
+
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+        }
+
+        private void график3ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ZedGraph.GraphPane graphPane = zedGraphControl1.GraphPane;
+            ZedGraph.PointPairList pointPairs = new ZedGraph.PointPairList();
+
+            graphPane.CurveList.Clear();
+            graphPane.Title.Text = "График 3";
+
+            for (double x = 0; x <= 1; x += 0.01)
+            {
+                if (x >= 0 && x < 0.07)
+                {
+                    pointPairs.Add(x, 0.95);
+                }
+                else if (x >= 0.07 && x < 0.13)
+                {
+                    pointPairs.Add(x, -30 * Math.Pow(x - 0.068, 2) + 0.95);
+                }
+                else if (x >= 0.13 && x <= 1)
+                {
+                    pointPairs.Add(x, 2 / (100 * x - 10) + 0.05);
+                }
+                else MessageBox.Show($"Missing {x}");
+            }
+
+            ZedGraph.LineItem lineItemResult = graphPane.AddCurve("График 3", pointPairs, Color.Red, ZedGraph.SymbolType.None);
+
+
+            zedGraphControl1.AxisChange();
+            zedGraphControl1.Invalidate();
+        }
+
+
+
+
+        private void formToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ActualTask actualTask = new ActualTask();
+            this.Hide();
+            actualTask.ShowDialog();
+            this.Show();
+        }
     }
 }

@@ -43,6 +43,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.посчитатьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.посчитатьсвоиТочкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.графикиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.график1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.formToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.график2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.график3ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -161,7 +166,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.посчитатьToolStripMenuItem,
-            this.посчитатьсвоиТочкиToolStripMenuItem});
+            this.посчитатьсвоиТочкиToolStripMenuItem,
+            this.графикиToolStripMenuItem,
+            this.formToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -181,6 +188,44 @@
             this.посчитатьсвоиТочкиToolStripMenuItem.Size = new System.Drawing.Size(149, 20);
             this.посчитатьсвоиТочкиToolStripMenuItem.Text = "Посчитать (свои точки)";
             this.посчитатьсвоиТочкиToolStripMenuItem.Click += new System.EventHandler(this.ПосчитатьсвоиТочкиToolStripMenuItem_Click);
+            // 
+            // графикиToolStripMenuItem
+            // 
+            this.графикиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.график1ToolStripMenuItem,
+            this.график2ToolStripMenuItem,
+            this.график3ToolStripMenuItem});
+            this.графикиToolStripMenuItem.Name = "графикиToolStripMenuItem";
+            this.графикиToolStripMenuItem.Size = new System.Drawing.Size(67, 20);
+            this.графикиToolStripMenuItem.Text = "Графики";
+            // 
+            // график1ToolStripMenuItem
+            // 
+            this.график1ToolStripMenuItem.Name = "график1ToolStripMenuItem";
+            this.график1ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.график1ToolStripMenuItem.Text = "График 1";
+            this.график1ToolStripMenuItem.Click += new System.EventHandler(this.график1ToolStripMenuItem_Click);
+            // 
+            // formToolStripMenuItem
+            // 
+            this.formToolStripMenuItem.Name = "formToolStripMenuItem";
+            this.formToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.formToolStripMenuItem.Text = "form";
+            this.formToolStripMenuItem.Click += new System.EventHandler(this.formToolStripMenuItem_Click);
+            // 
+            // график2ToolStripMenuItem
+            // 
+            this.график2ToolStripMenuItem.Name = "график2ToolStripMenuItem";
+            this.график2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.график2ToolStripMenuItem.Text = "График 2";
+            this.график2ToolStripMenuItem.Click += new System.EventHandler(this.график2ToolStripMenuItem_Click);
+            // 
+            // график3ToolStripMenuItem
+            // 
+            this.график3ToolStripMenuItem.Name = "график3ToolStripMenuItem";
+            this.график3ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.график3ToolStripMenuItem.Text = "График 3";
+            this.график3ToolStripMenuItem.Click += new System.EventHandler(this.график3ToolStripMenuItem_Click);
             // 
             // ApproxForm
             // 
@@ -226,6 +271,11 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem посчитатьToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem посчитатьсвоиТочкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem графикиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem график1ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem formToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem график2ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem график3ToolStripMenuItem;
     }
 }
 
